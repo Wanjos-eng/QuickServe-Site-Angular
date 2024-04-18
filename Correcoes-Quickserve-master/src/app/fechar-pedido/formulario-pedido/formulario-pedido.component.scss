@@ -2,65 +2,57 @@
   display: flex;
   flex-wrap: wrap;
   padding: 20px;
+  align-content: center;
 }
 
 .form-group {
   flex: 1 1 auto;
-  margin-bottom: 10px; /* Espaçamento entre os formulários */
+  margin-bottom: 20px; /* Espaçamento entre os grupos */
+  position: relative; /* Adicionado para posicionamento relativo */
 }
 
 .form-group label {
   font-size: 1rem;
-  color: #333;
+  color: rgb(46, 17, 85);
   margin-bottom: 0.5rem;
   display: block;
 }
 
 .form-group input {
-  width: 100%;
+  width: 80%; /* Largura padrão - 100% da largura do seu container */
   padding: 0.5rem;
   font-size: 1rem;
   color: #333;
-  border: 1px solid #ccc;
+  border: 1px solid #b08bc9;
   border-radius: 4px;
   background-color: #f0f0f0;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
 .small-input {
-  width: 30%; /* Defina o tamanho desejado para o campo de número */
+  width: 30%; /* Largura do campo de número - 30% da largura do seu container */
 }
 
 .address-input {
-  width: calc(70% - 5px); /* Defina o tamanho desejado para o campo de endereço */
+  width: calc(70% - 10px); /* Largura do campo de endereço - 70% da largura do seu container, ajustada para levar em conta a margem */
 }
 
-.address-group {
-  margin-right: 10px; /* Espaçamento entre o grupo de endereço e o próximo grupo */
+.invalid-feedback {
+  color: red;
+  font-size: 0.8rem;
+  margin-top: 0.2rem; /* Espaçamento para cima */
+  position: absolute; /* Posicionamento absoluto */
+  bottom: -20px; /* Posição em relação ao grupo de formulário */
+  left: 0; /* Alinhamento à esquerda */
 }
 
 .number-group {
   margin-right: 10px; /* Espaçamento entre o grupo de número e o próximo grupo */
 }
 
-.invalid-feedback {
-  color: red;
-  font-size: 0.8rem;
-  margin-top: 0.5rem;
-}
-
+/* Ajuste para telas menores */
 @media (max-width: 767px) {
-  .small-input {
-    width: 100%; /* Ajuste para ocupar toda a largura em telas menores */
-  }
-
-  .address-input {
-    width: 100%; /* Ajuste para ocupar toda a largura em telas menores */
-  }
-
-  .address-group,
-  .number-group {
-    margin-right: 0; /* Remova o espaçamento entre os grupos em telas menores */
-    margin-bottom: 10px; /* Adicione espaçamento abaixo dos grupos em telas menores */
+  .form-group {
+    flex: 1 1 100%; /* Alterado para ocupar toda a largura em telas menores */
   }
 }

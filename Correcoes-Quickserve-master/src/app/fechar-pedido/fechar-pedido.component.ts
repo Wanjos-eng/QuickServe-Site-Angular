@@ -1,32 +1,36 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild, AfterViewInit } from '@angular/core';
 import { ServicoCarrinhoCompras } from '../services/carrinho.service';
-import { FormBuilder, Validators, FormGroup } from '@angular/forms';
+import { FormBuilder } from '@angular/forms';
+import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
+import { FormularioPedidoComponent } from './formulario-pedido/formulario-pedido.component';
 
 @Component({
   selector: 'app-fechar-pedido',
   templateUrl: './fechar-pedido.component.html',
   styleUrls: ['./fechar-pedido.component.scss']
 })
-export class FecharPedidoComponent implements OnInit {
+export class FecharPedidoComponent implements OnInit, AfterViewInit {
   opcoesPagamento = ['Cartão', 'Dinheiro'];
   pagamentoSelecionado = this.opcoesPagamento[0];
-  formularioPedido: FormGroup;
-  temItensNoCarrinho$;
+  temItensNoCarrinho$: Observable<boolean>;
+  @ViewChild(FormularioPedidoComponent) formularioPedidoComponent: FormularioPedidoComponent | undefined;
 
   constructor(private servicoCarrinho: ServicoCarrinhoCompras, private construtorFormulario: FormBuilder) {
-    this.formularioPedido = this.construtorFormulario.group({
-      pagamentoSelecionado: ['']
-    });
     this.temItensNoCarrinho$ = this.servicoCarrinho.itens$.pipe(
-      map(itens => itens.length > 0)
+      map((itens: any[]) => itens.length > 0)
     );
   }
 
   ngOnInit() {
   }
 
-  itensCarrinho() {
+  ngAfterViewInit() {
+    // Agora você pode acessar seguro o `formularioPedidoComponent`
+    console.log(this.formularioPedidoComponent);
+  }
+
+  itensCarrinho(): Observable<any[]> { // Alterando para retornar um Observable
     return this.servicoCarrinho.itens$;
   }
 
@@ -34,12 +38,16 @@ export class FecharPedidoComponent implements OnInit {
     this.servicoCarrinho.limpar();
   }
 
-  removerItemCarrinho(item: any){
-    if (item && item.menuItem) {
-      this.servicoCarrinho.removerItem(item.menuItem);
+  retirarItemCarrinho(item: any){
+    if (item) {
+      this.servicoCarrinho.diminuirQuantidade(item);
     }
   }
-
+  removerItemCarrinho(item: any){
+    if (item) {
+      this.servicoCarrinho.removerItem(item);
+    }
+  }
   adicionarItemCarrinho(item: any){
     if (item && item.menuItem) {
       this.servicoCarrinho.adicionarItem(item.menuItem);
@@ -47,16 +55,20 @@ export class FecharPedidoComponent implements OnInit {
   }
 
   totalCarrinho(): number {
-    return this.servicoCarrinho.total()
+    return this.servicoCarrinho.total();
   }
 
   finalizarPedido() {
-    this.temItensNoCarrinho$.subscribe(temItens => {
-      if (temItens && this.formularioPedido.valid) {
-        alert('Pedido concluído com sucesso!');
-      } else {
-        alert('Por favor, adicione itens ao carrinho e preencha o endereço de entrega.');
-      }
-    });
+    if (this.formularioPedidoComponent && this.formularioPedidoComponent.formularioPedido.valid) {
+      this.temItensNoCarrinho$.subscribe((temItens: boolean) => {
+        if (temItens) {
+          alert('Pedido concluído com sucesso!');
+        } else {
+          alert('Por favor, adicione itens ao carrinho.');
+        }
+      });
+    } else {
+      alert('Por favor, preencha o formulário de endereço corretamente.');
+    }
   }
 }

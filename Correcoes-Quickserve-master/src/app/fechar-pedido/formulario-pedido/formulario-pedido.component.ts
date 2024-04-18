@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import { FormBuilder, Validators, FormGroup } from '@angular/forms';
 
 @Component({
@@ -8,6 +8,7 @@ import { FormBuilder, Validators, FormGroup } from '@angular/forms';
 })
 export class FormularioPedidoComponent implements OnInit {
   formularioPedido: FormGroup = this.construtorFormulario.group({});
+  @Output() formValidityChanged = new EventEmitter<boolean>();
 
   constructor(private construtorFormulario: FormBuilder) { }
 
@@ -16,6 +17,10 @@ export class FormularioPedidoComponent implements OnInit {
       endereco: ['', [Validators.required, Validators.minLength(5)]],
       numero: ['', [Validators.required, Validators.pattern('^[0-9]*$')]],
       complemento: ['']
+    });
+
+    this.formularioPedido.statusChanges.subscribe(status => {
+      this.formValidityChanged.emit(status === 'VALID');
     });
   }
 

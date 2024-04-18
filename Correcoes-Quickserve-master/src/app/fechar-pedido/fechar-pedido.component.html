@@ -1,25 +1,28 @@
+<app-formulario-pedido></app-formulario-pedido>
 <div class="container">
-  <app-formulario-pedido></app-formulario-pedido>
   <div class="row">
     <div class="col-xs-12 col-md-6">
-      <div *ngFor="let item of (itensCarrinho() | async)" class="item-box">
+      <div *ngFor="let item of itensCarrinho() | async" class="item-box">
         <p>{{item?.menuItem?.name}}: {{item?.quantidade}}</p>
         <button (click)="adicionarItemCarrinho(item)">+</button>
-        <button (click)="removerItemCarrinho(item)">-</button>
+        <button (click)="retirarItemCarrinho(item)">-</button>
         <button (click)="removerItemCarrinho(item)">x</button>
         <p class="item-description">Esta é uma descrição de exemplo do item.</p>
       </div>
     </div>
     <div class="col-xs-12 col-md-6">
       <div class="card">
-        <app-custos></app-custos>
+        <app-custos [entrega]="100" [totalCarrinho]="totalCarrinho()"></app-custos>
         <div class="form-group">
           <label for="pagamento">Forma de pagamento:</label>
           <select class="form-control" id="pagamento" formControlName="pagamentoSelecionado">
-            <option *ngFor="let opcao of opcoesPagamento">{{opcao}}</option>
+            <option *ngFor="let opcao of opcoesPagamento" [value]="opcao">{{opcao}}</option>
           </select>
+          <div *ngIf="formularioPedidoComponent?.formularioPedido?.get('pagamentoSelecionado')?.invalid && (formularioPedidoComponent?.formularioPedido?.get('pagamentoSelecionado')?.dirty || formularioPedidoComponent?.formularioPedido?.get('pagamentoSelecionado')?.touched)">
+            <small class="text-danger">Selecione uma forma de pagamento.</small>
+          </div>
         </div>
-        <button (click)="finalizarPedido()" [disabled]="!(temItensNoCarrinho$ | async) || !formularioPedido.valid">Concluir Pedido</button>
+        <button (click)="finalizarPedido()" [disabled]="!formularioPedidoComponent?.formularioPedido?.valid || !(temItensNoCarrinho$ | async)">Concluir Pedido</button>
       </div>
     </div>
   </div>
