@@ -1,0 +1,28 @@
+<div class="row" *ngIf="restaurante$ | async as restaurante">
+  <div class="box box-solid">
+    <div class="box-header with-border">
+      <h3 class="box-title">{{restaurante.name}}</h3>
+      <span class="pull-right"><i class="fa fa-star"></i> {{restaurante.rating}}</span>
+    </div>
+    <!-- /.box-header -->
+    <div class="box-body">
+      <div class="restaurante-img col-sm-3 col-xs-12">
+        <img *ngIf="restaurante.imagePath" [src]="'../../' + restaurante.imagePath" />
+      </div>
+      <dl class="col-sm-9 col-xs-12">
+        <dt><strong>Categoria</strong></dt>
+        <dd>{{restaurante.category}}</dd>
+        <dt><strong>Somos</strong></dt>
+        <dd>{{restaurante.about}}</dd>
+        <dt><strong>Horários</strong></dt>
+        <dd>{{restaurante.hours}}</dd>
+      </dl>
+    </div>
+    <!-- /.box-body -->
+    <div class="box-footer detail-footer">
+      <a routerLinkActive="detail-active" [routerLinkActiveOptions]="{exact: true}" [routerLink]="['menu']">Menu</a>
+      <a routerLinkActive="detail-active" [routerLinkActiveOptions]="{exact: true}" [routerLink]="['reviews']">Avaliações</a>
+    </div>
+  </div>
+  <router-outlet></router-outlet>
+</div>

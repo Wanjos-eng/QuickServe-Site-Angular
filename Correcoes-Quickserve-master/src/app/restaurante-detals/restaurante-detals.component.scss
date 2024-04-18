@@ -1,0 +1,84 @@
+/* Estilos ajustados conforme a descrição do componente */
+
+.box {
+  border-radius: 5px;
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.1);
+  margin: 20px; /* Afastamento do container com margem ao redor */
+}
+
+.box-header {
+  padding: 15px;
+  border-bottom: 1px solid #b08bc9;
+  display: flex;
+  align-items: center;
+}
+
+.box-title {
+  margin: 0;
+  font-size: 1.25rem;
+  font-weight: 500;
+  color: #333;
+  flex: 1;
+}
+
+.box-body {
+  padding: 15px;
+  display: flex;
+}
+
+.restaurante-img {
+  width: 150px; /* Tamanho pequeno e fixo da imagem */
+  margin-right: 15px;
+}
+
+.restaurante-img img {
+  width: 100%;
+  height: auto; /* Ajuste da altura proporcionalmente à largura */
+}
+
+dl {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+dt {
+  font-weight: 500;
+  color: #333;
+}
+
+dd {
+  margin-bottom: 5px;
+}
+
+.detail-footer {
+  display: flex;
+  justify-content: center;
+  padding: 10px 0;
+}
+
+.detail-footer a {
+  text-decoration: none;
+  padding: 5px 10px;
+  border: 2px solid #555;
+  border-radius: 5px;
+  color: rgb(46, 17, 85);
+  transition: all 0.3s ease;
+  margin: 0 2px; /* Adicionando um espaçamento entre os botões */
+}
+
+.detail-footer a:hover {
+  background-color: rgb(46, 17, 85);
+  color: #fff;
+}
+.detail-active{
+  background-color: rgb(114, 100, 133);
+  color: #fff;
+
+}
+
+.pull-right {
+  font-size: 16px;
+  color: #ffc107;
+  margin-right: 5px;
+}

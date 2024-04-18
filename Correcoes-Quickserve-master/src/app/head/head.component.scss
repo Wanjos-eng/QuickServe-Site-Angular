@@ -1,0 +1,50 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+.main-header {
+  background-color: rgb(46, 17, 85);
+  padding: 10px;
+  border-radius: 20px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.container-nav {
+  display: flex;
+  margin: 10px 0;
+  align-items: center;
+}
+
+.container-nav img {
+  max-width: 100px;
+  height: auto;
+}
+
+.container-nav a {
+  color: #ffffff;
+  font-family: 'Roboto', sans-serif;
+  text-decoration: none;
+  font-size: 1.3rem;
+  transition: color 0.3s;
+}
+
+.container-nav a:hover {
+  color: #3d3b3b;
+}
+
+.container-nav a.active {
+  color: #472399; /* Cor do texto quando o link está ativo */
+}
+
+@media (max-width: 768px) {
+  .container {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .container-nav a {
+    margin: 10px 0;
+  }
+  
+}
+.container-nav a:nth-child(n+2) {
+  margin-left: 20px;
+}

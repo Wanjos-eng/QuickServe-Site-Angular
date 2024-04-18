@@ -1,0 +1,83 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+:root {
+  --primary-color: #b08bc9;
+  --secondary-color: #ffc107;
+  --text-color: #333;
+  --light-text-color: #7a7a7a;
+  --font-family: 'Roboto', sans-serif;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  font-family: var(--font-family);
+}
+
+.restaurante-header {
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.titulo {
+  margin: 20px 0;
+}
+
+.restaurante-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.restaurante-item {
+  width: calc(50% - 10px);
+  margin-bottom: 20px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.restaurante-box {
+  border: 1px solid var(--primary-color);
+  border-radius: 4px;
+  overflow: hidden;
+  display: flex;
+  cursor: pointer;
+}
+
+.restaurante-img img {
+  max-width: 120px;
+  height: auto;
+  border-radius: 4px 0 0 4px;
+}
+
+.restaurante-info {
+  padding: 15px;
+  flex-grow: 1;
+}
+
+.restaurante-nome {
+  font-size: 20px;
+  font-weight: bold;
+  color: var(--text-color);
+  margin-bottom: 5px;
+}
+
+.restaurante-detalhe {
+  font-size: 16px;
+  color: var(--light-text-color);
+  margin-bottom: 5px;
+  display: block;
+}
+
+.restaurante-ratings {
+  padding: 15px;
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-end;
+}
+
+.restaurante-rating {
+  font-size: 16px;
+  color: #ffc107 !important;
+  margin-right: 5px;
+}
+

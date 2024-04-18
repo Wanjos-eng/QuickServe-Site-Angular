@@ -1,0 +1,25 @@
+<div class="container">
+  <main class="restaurante-main">
+    <header class="restaurante-header">
+      <h1 class="titulo">Todos os Restaurantes</h1>
+    </header>
+    <section class="restaurante-conteudo">
+      <div class="restaurante-container">
+        <article *ngFor="let restaurante of restaurantes$ | async" class="restaurante-item" (click)="restauranteId(restaurante.id)">
+          <div class="restaurante-box">
+            <div class="restaurante-img"><img [src]="restaurante.imagePath" alt="{{restaurante.name}}" /></div>
+            <div class="restaurante-info">
+              <h2 class="restaurante-nome">{{restaurante.name}}</h2>
+              <p class="restaurante-detalhe">{{restaurante.category}}</p>
+              <p class="restaurante-detalhe">{{restaurante.deliveryEstimate}}</p>
+            </div>
+            <div class="restaurante-ratings">
+              <span class="restaurante-rating"><i class="fa fa-star"></i> {{restaurante.rating}}</span>
+            </div>
+          </div>
+        </article>
+      </div>
+    </section>
+  </main>
+</div>
+

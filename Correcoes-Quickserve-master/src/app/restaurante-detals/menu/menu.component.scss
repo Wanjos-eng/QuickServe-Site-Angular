@@ -1,0 +1,55 @@
+.box {
+  border-radius: 5px;
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.1);
+  margin: 20px 10px 30px 20px;
+  width: 50%;
+  max-height: 50vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.box-header {
+  padding: 15px;
+  border-bottom: 1px solid #b08bc9;
+}
+
+.user-block {
+  display: flex;
+  align-items: flex-start;
+}
+
+.user-block img {
+  width: 100px;
+  height: auto;
+  border-radius: 50%;
+  margin-right: 15px;
+}
+
+.user-info {
+  display: flex;
+  flex-direction: column;
+}
+
+.username {
+  margin: 0;
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #333;
+}
+
+.description {
+  font-size: 0.875rem;
+  color: #666;
+  margin-top: 2px;
+}
+
+.box-body {
+  padding: 15px;
+}
+
+.box-body p {
+  margin: 0;
+}
+.botao-adicionar{
+  cursor: cell;
+}

@@ -1,0 +1,26 @@
+<!--INÍCIO DO MENU -->
+<div class="col-md-9 col-xs-12">
+  <div class="col-xs-12 col-sm-6" *ngFor="let menuItem of menus$ | async">
+    <div class="box box-solid">
+      <div class="box-header with-border">
+        <div class="user-block">
+          <img [src]="'../../' + menuItem.imagePath" class="img-circle">
+          <div class="user-info">
+            <span class="username">{{menuItem.name}}</span>
+            <span class="description">{{menuItem.description}}</span>
+          </div>
+        </div>
+      </div>
+      <div class="box-body">
+        <p>{{menuItem.price | currency: 'BRL': true}}</p>
+        <a class="botao-adicionar">
+          <a (click)="adicionarItem(menuItem)" class=""><i class="fa fa-plus-circle"></i> Adicionar</a>
+        </a>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="col-md-3 col-xs-12">
+<app-card-comprar></app-card-comprar>
+</div>
+<!-- FIM DO MENU -->

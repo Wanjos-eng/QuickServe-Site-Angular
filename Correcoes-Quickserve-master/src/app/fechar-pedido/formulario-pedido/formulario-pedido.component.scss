@@ -1,0 +1,66 @@
+.form-container {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 20px;
+}
+
+.form-group {
+  flex: 1 1 auto;
+  margin-bottom: 10px; /* Espaçamento entre os formulários */
+}
+
+.form-group label {
+  font-size: 1rem;
+  color: #333;
+  margin-bottom: 0.5rem;
+  display: block;
+}
+
+.form-group input {
+  width: 100%;
+  padding: 0.5rem;
+  font-size: 1rem;
+  color: #333;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  background-color: #f0f0f0;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.small-input {
+  width: 30%; /* Defina o tamanho desejado para o campo de número */
+}
+
+.address-input {
+  width: calc(70% - 5px); /* Defina o tamanho desejado para o campo de endereço */
+}
+
+.address-group {
+  margin-right: 10px; /* Espaçamento entre o grupo de endereço e o próximo grupo */
+}
+
+.number-group {
+  margin-right: 10px; /* Espaçamento entre o grupo de número e o próximo grupo */
+}
+
+.invalid-feedback {
+  color: red;
+  font-size: 0.8rem;
+  margin-top: 0.5rem;
+}
+
+@media (max-width: 767px) {
+  .small-input {
+    width: 100%; /* Ajuste para ocupar toda a largura em telas menores */
+  }
+
+  .address-input {
+    width: 100%; /* Ajuste para ocupar toda a largura em telas menores */
+  }
+
+  .address-group,
+  .number-group {
+    margin-right: 0; /* Remova o espaçamento entre os grupos em telas menores */
+    margin-bottom: 10px; /* Adicione espaçamento abaixo dos grupos em telas menores */
+  }
+}

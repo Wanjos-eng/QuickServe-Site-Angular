@@ -1,0 +1,55 @@
+/* Estilos para a caixa de revisão */
+.review-box {
+  margin: 20px; /* Aumenta o espaçamento com as laterais */
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  padding: 20px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+/* Estilos para o cabeçalho da revisão */
+.review-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 15px;
+}
+
+/* Estilos para a pontuação da revisão */
+.review-score {
+  font-size: 18px;
+  color: #f39c12; /* Cor das estrelas */
+}
+
+/* Estilos para o bloco do usuário */
+.user-block {
+  display: flex;
+  align-items: center;
+}
+
+/* Estilos para a imagem do usuário */
+.user-block img {
+  width: 50px; /* Tamanho fixo para a imagem */
+  height: 50px; /* Tamanho fixo para a imagem */
+  border-radius: 50%;
+  margin-right: 10px;
+}
+
+/* Estilos para o nome do usuário */
+.username {
+  font-size: 16px;
+  font-weight: bold;
+}
+
+/* Estilos para a descrição */
+.description {
+  font-size: 14px;
+  color: #999;
+  margin-bottom: 5px; /* Espaçamento entre a data e o comentário */
+}
+
+/* Estilos para o corpo da revisão */
+.review-body {
+  font-size: 14px;
+  line-height: 1.5;
+}

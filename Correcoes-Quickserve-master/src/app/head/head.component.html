@@ -1,0 +1,10 @@
+<header class="main-header">
+  <nav class="navbar navbar-light bg-light">
+    <div class="container-nav">
+      <img src="assets/img/drone.png" class="rounded float-start" alt="drone.png">
+      <a routerLink="/" class="navbar-brand" [class.active]="activeLink === 'home'" (click)="setActiveLink('home')"><strong>QuickServe</strong></a>
+      <a routerLink="/restaurantes" class="navbar-brand" [class.active]="activeLink === 'restaurantes'" (click)="setActiveLink('restaurantes')">Restaurantes</a>
+      <a routerLink="/about" class="navbar-brand" [class.active]="activeLink === 'about'" (click)="setActiveLink('about')">Sobre</a>
+    </div>
+  </nav>
+</header>

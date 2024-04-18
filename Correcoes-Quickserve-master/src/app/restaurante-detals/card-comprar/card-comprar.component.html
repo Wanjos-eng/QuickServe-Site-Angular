@@ -1,0 +1,42 @@
+<!--INICIO DO CARRINHO-->
+<div class="box box-solid">
+  <div class="box-header">
+    <i class="fa fa-shopping-cart"></i>
+
+    <h3 class="box-title">Carrinho</h3>
+  </div>
+  <!-- /.box-header -->
+  <div class="box-body">
+
+    <div *ngIf="!(itens() | async)?.length">
+      <p class="text-center">
+        Seu carrinho está vazio!
+      </p>
+    </div>
+    <div class="table-responsive" *ngIf="(itens() | async)?.length">
+        <table class="table">
+          <tbody>
+          <tr *ngFor="let item of itens() | async" [@row]="rowState">
+            <th *ngIf="item && item.menuItem">({{item.quantidade}}x) {{item.menuItem.name}}</th>
+            <td class="text-right" *ngIf="item">{{item.valor() | currency: 'BRL': true}}</td>
+            <td class="text-right">
+              <a class="simbol-remove">
+                <a (click)="removerItem(item)" class="btn btn-sm danger"><i class="fa fa-remove"></i></a>
+              </a>
+            </td>
+          </tr>
+          <tr>
+            <th>Total:</th>
+            <td class="text-right" *ngIf="total()">{{total() | currency: 'BRL': true}}</td>
+          </tr>
+        </tbody></table>
+      </div>
+  </div>
+  <div class="box-footer" *ngIf="(itens() | async)?.length">
+    <div class="pull-right">
+      <button (click)="limpar()" type="button" class="btn btn-danger"><i class="fa fa-trash"></i> Limpar</button>
+      <a [routerLink]="['/fechar-pedido']" class="btn btn-success"><i class="fa fa-credit-card"></i> Fechar Pedido</a>
+    </div>
+  </div>
+</div>
+<!-- FIM DO CARRINHO -->
