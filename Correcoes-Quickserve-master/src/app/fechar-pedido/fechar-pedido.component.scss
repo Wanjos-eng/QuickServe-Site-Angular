@@ -1,0 +1,22 @@
+.container {
+  margin-left: 20px; /* Afastamento da margem esquerda */
+  margin-right: 20px; /* Afastamento da margem direita */
+}
+
+.item-box {
+  border: 1px solid #ccc; /* Adicionando uma borda para separar os itens */
+  padding: 10px; /* Espaçamento interno */
+  margin-bottom: 10px; /* Espaço entre os itens */
+}
+
+.item-box p {
+  margin: 0; /* Removendo a margem padrão dos parágrafos */
+}
+
+.item-box button {
+  margin-right: 5px; /* Espaçamento entre os botões */
+}
+
+.item-description {
+  margin-top: 10px; /* Espaçamento superior para a descrição */
+}

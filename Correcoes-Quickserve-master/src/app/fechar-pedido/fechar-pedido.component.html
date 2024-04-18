@@ -2,16 +2,23 @@
 <div class="container">
   <div class="row">
     <div class="col-xs-12 col-md-6">
-      <div *ngFor="let item of itensCarrinho() | async" class="item-box">
-        <p>{{item?.menuItem?.name}}: {{item?.quantidade}}</p>
-        <button (click)="adicionarItemCarrinho(item)">+</button>
-        <button (click)="retirarItemCarrinho(item)">-</button>
-        <button (click)="removerItemCarrinho(item)">x</button>
-        <p class="item-description">Esta é uma descrição de exemplo do item.</p>
+      <div class="item-box">
+        <h4 class="section-title">Itens</h4>
+        <div *ngFor="let item of itensCarrinho() | async" class="item-details">
+          <p>{{item?.menuItem?.name}}</p>
+          <p>Quantidade: {{item?.quantidade}}</p>
+          <p class="item-description">Descrição: Esta é uma descrição de exemplo do item.</p>
+          <div class="button-group">
+            <button class="btn btn-primary" (click)="adicionarItemCarrinho(item)">Adicionar</button>
+            <button class="btn btn-secondary" (click)="retirarItemCarrinho(item)">Remover</button>
+            <button class="btn btn-danger" (click)="removerItemCarrinho(item)">Remover Tudo</button>
+          </div>
+        </div>
       </div>
     </div>
     <div class="col-xs-12 col-md-6">
       <div class="card">
+        <h4 class="section-title">Carrinho</h4>
         <app-custos [entrega]="100" [totalCarrinho]="totalCarrinho()"></app-custos>
         <div class="form-group">
           <label for="pagamento">Forma de pagamento:</label>
@@ -22,7 +29,7 @@
             <small class="text-danger">Selecione uma forma de pagamento.</small>
           </div>
         </div>
-        <button (click)="finalizarPedido()" [disabled]="!formularioPedidoComponent?.formularioPedido?.valid || !(temItensNoCarrinho$ | async)">Concluir Pedido</button>
+        <button class="btn btn-success" (click)="finalizarPedido()" [disabled]="!formularioPedidoComponent?.formularioPedido?.valid || !(temItensNoCarrinho$ | async)">Concluir Pedido</button>
       </div>
     </div>
   </div>
