@@ -14,8 +14,8 @@ export class FormularioPedidoComponent implements OnInit {
 
   ngOnInit() {
     this.formularioPedido = this.construtorFormulario.group({
-      endereco: ['', [Validators.required, Validators.minLength(5)]],
-      numero: ['', [Validators.required, Validators.pattern('^[0-9]*$')]],
+      endereco: ['', { validators: [Validators.required, Validators.minLength(5)], updateOn: 'change' }],
+      numero: ['', { validators: [Validators.required, Validators.pattern('^[0-9]*$')], updateOn: 'change' }],
       complemento: ['']
     });
 
@@ -30,3 +30,4 @@ export class FormularioPedidoComponent implements OnInit {
     }
   }
 }
+

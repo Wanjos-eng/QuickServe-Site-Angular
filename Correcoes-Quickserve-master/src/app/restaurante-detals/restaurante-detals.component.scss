@@ -1,84 +1,86 @@
-/* Estilos ajustados conforme a descrição do componente */
-
+/* Estilo Ajustado do Componente de Restaurante */
 .box {
-  border-radius: 5px;
-  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 10px; /* Bordas mais arredondadas */
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15); /* Sombra mais suave e espalhada */
   margin: 20px; /* Afastamento do container com margem ao redor */
+  overflow: hidden; /* Esconde a borda inferior quando o conteúdo excede */
 }
 
 .box-header {
-  padding: 15px;
-  border-bottom: 1px solid #b08bc9;
+  padding: 20px;
+  border-bottom: 1px solid #b08bc9; /* Mantendo apenas a linha no cabeçalho */
   display: flex;
   align-items: center;
+  justify-content: space-between;
 }
 
 .box-title {
   margin: 0;
-  font-size: 1.25rem;
-  font-weight: 500;
-  color: #333;
-  flex: 1;
+  font-size: 1.5rem; /* Tamanho maior para o título */
+  font-weight: 700; /* Peso da fonte mais forte */
+  color: #333; /* Cor do texto */
 }
 
 .box-body {
-  padding: 15px;
+  padding: 20px;
+  background: #f9f9f9; /* Cor de fundo mais clara para o corpo */
   display: flex;
+  flex-wrap: wrap; /* Permite que os itens se ajustem em telas menores */
 }
 
 .restaurante-img {
-  width: 150px; /* Tamanho pequeno e fixo da imagem */
+  flex: 0 0 150px; /* Tamanho fixo da imagem com flexibilidade zero */
   margin-right: 15px;
+  border-radius: 5px; /* Bordas arredondadas para a imagem */
+  overflow: hidden; /* Esconde as partes excedentes da imagem */
 }
 
 .restaurante-img img {
   width: 100%;
   height: auto; /* Ajuste da altura proporcionalmente à largura */
+  object-fit: cover; /* Garante que a imagem cubra todo o espaço disponível */
 }
 
 dl {
   margin: 0;
   padding: 0;
   list-style: none;
+  flex: 1; /* Permite que a lista ocupe o espaço restante */
 }
 
 dt {
-  font-weight: 500;
-  color: #333;
+  font-weight: 700; /* Peso da fonte mais forte */
+  color: #333; /* Cor do texto */
 }
 
 dd {
-  margin-bottom: 5px;
+  margin-bottom: 10px; /* Espaçamento maior entre os itens */
 }
 
 .detail-footer {
+  padding: 15px 0;
   display: flex;
   justify-content: center;
-  padding: 10px 0;
 }
 
 .detail-footer a {
   text-decoration: none;
-  padding: 5px 10px;
-  border: 2px solid #555;
-  border-radius: 5px;
-  color: rgb(46, 17, 85);
-  transition: all 0.3s ease;
-  margin: 0 2px; /* Adicionando um espaçamento entre os botões */
+  padding: 10px 15px;
+  border: 2px solid #555; /* Bordas para destacar os botões */
+  border-radius: 25px; /* Bordas mais arredondadas */
+  color: #555; /* Cor do texto */
+  transition: background-color 0.3s ease;
+  margin: 0 5px; /* Espaçamento entre os botões */
 }
 
-.detail-footer a:hover {
-  background-color: rgb(46, 17, 85);
-  color: #fff;
-}
-.detail-active{
-  background-color: rgb(114, 100, 133);
-  color: #fff;
-
+.detail-footer a:hover,
+.detail-footer a.detail-active {
+  background-color: #8A2BE2; /* Cor de fundo ao passar o mouse e quando ativo */
+  color: white; /* Texto branco para contraste */
 }
 
 .pull-right {
-  font-size: 16px;
-  color: #ffc107;
+  font-size: 1rem; /* Tamanho padrão para a classificação */
+  color: #ffc107; /* Cor dourada para as estrelas */
   margin-right: 5px;
 }

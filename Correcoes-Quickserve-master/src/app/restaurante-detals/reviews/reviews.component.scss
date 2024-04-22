@@ -1,55 +1,62 @@
-/* Estilos para a caixa de revisão */
+/* Estilo Modernizado para a Página de Comentários e Avaliações */
 .review-box {
-  margin: 20px; /* Aumenta o espaçamento com as laterais */
-  border: 1px solid #ddd;
-  border-radius: 5px;
+  margin: 20px; /* Afastamento uniforme para alinhar com a barra de navegação */
+  border: none; /* Removendo a borda */
+  border-radius: 10px; /* Bordas mais arredondadas */
   padding: 20px;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05); /* Sombra mais suave para cada comentário */
+  background-color: #fff; /* Fundo branco para destacar do fundo da página */
 }
 
-/* Estilos para o cabeçalho da revisão */
 .review-header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-bottom: 15px;
+  padding-bottom: 15px;
+  border-bottom: 2px solid #eee; /* Linha sutil para separar o cabeçalho do corpo */
 }
 
-/* Estilos para a pontuação da revisão */
 .review-score {
   font-size: 18px;
-  color: #f39c12; /* Cor das estrelas */
+  color: #FFD700; /* Cor dourada para as estrelas */
+  text-shadow: 0 1px 1px rgba(0, 0, 0, 0.1); /* Sombra sutil para dar destaque */
+  font-weight: bold; /* Texto em negrito para destacar a pontuação */
 }
 
-/* Estilos para o bloco do usuário */
 .user-block {
   display: flex;
   align-items: center;
 }
 
-/* Estilos para a imagem do usuário */
 .user-block img {
-  width: 50px; /* Tamanho fixo para a imagem */
-  height: 50px; /* Tamanho fixo para a imagem */
+  width: 60px; /* Aumentando o tamanho da imagem */
+  height: 60px;
   border-radius: 50%;
-  margin-right: 10px;
+  margin-right: 15px;
+  border: 3px solid #FFD700; /* Borda dourada para combinar com as estrelas */
 }
 
-/* Estilos para o nome do usuário */
 .username {
-  font-size: 16px;
+  font-size: 18px; /* Aumentando o tamanho da fonte */
   font-weight: bold;
+  color: #333; /* Cor mais escura para o nome do usuário */
 }
 
-/* Estilos para a descrição */
 .description {
   font-size: 14px;
-  color: #999;
-  margin-bottom: 5px; /* Espaçamento entre a data e o comentário */
+  color: #666; /* Cor mais suave para a data */
+  margin-bottom: 10px; /* Aumentando o espaçamento */
 }
 
-/* Estilos para o corpo da revisão */
 .review-body {
-  font-size: 14px;
-  line-height: 1.5;
+  font-size: 16px; /* Aumentando o tamanho da fonte para melhor leitura */
+  line-height: 1.6; /* Aumentando o espaçamento entre linhas */
+  color: #444; /* Cor mais escura para o texto */
+}
+
+/* Responsividade para dispositivos móveis */
+@media (max-width: 768px) {
+  .review-box {
+    margin: 10px; /* Reduzindo o espaçamento em dispositivos móveis */
+  }
 }

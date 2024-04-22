@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
 
 :root {
   --primary-color: #b08bc9;
@@ -21,6 +21,7 @@
 
 .titulo {
   margin: 20px 0;
+  font-family: bebas;
 }
 
 .restaurante-container {
@@ -33,7 +34,14 @@
   width: calc(50% - 10px);
   margin-bottom: 20px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Transição suave para o efeito de hover */
 }
+
+.restaurante-item:hover {
+  transform: translateY(-5px); /* Eleva o item levemente */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Sombra mais intensa para destaque */
+}
+
 
 .restaurante-box {
   border: 1px solid var(--primary-color);

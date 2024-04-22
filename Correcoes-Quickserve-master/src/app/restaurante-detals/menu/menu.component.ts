@@ -25,7 +25,11 @@ export class MenuComponent implements OnInit {
     });
   }
 
-  adicionarItem(item: any){
-    this.servicoCarrinhoCompras.adicionarItem(item)
+  itemAdicionadoId: string | null = null;
+
+  adicionarItem(item: MenuItem) {
+    this.servicoCarrinhoCompras.adicionarItem(item);
+    this.itemAdicionadoId = item.id;
+    setTimeout(() => this.itemAdicionadoId = null, 600); // Reseta após 0,6 segundos
   }
 }

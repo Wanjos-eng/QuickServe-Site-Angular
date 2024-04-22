@@ -50,6 +50,36 @@
 .box-body p {
   margin: 0;
 }
-.botao-adicionar{
-  cursor: cell;
+
+// Estilos para o botão
+.botao-adicionar {
+  max-width: 150px;
+  background-color: #8A2BE2; /* Cor roxa padrão */
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  position: relative;
+  overflow: hidden;
+}
+
+// Estilos para o ícone de verificação
+.icone-verificacao {
+  color: #27ae60; /* Cor verde para indicar sucesso */
+  position: absolute;
+  top: 50%;
+  right: -30px; /* Começa fora do botão */
+  transform: translateY(-50%);
+  transition: right 0.3s;
+}
+
+// Estilos para o botão após ser clicado
+.botao-adicionar.clicado {
+  background-color: #27ae60; /* Muda para cor verde */
+}
+
+.botao-adicionar.clicado .icone-verificacao {
+  right: 10px; /* Move o ícone para dentro do botão */
 }

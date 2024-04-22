@@ -11,17 +11,21 @@
 }
 
 .content-container {
-  background-color: #f0f0f0;
-  padding: 150px;
-  border-radius: 10px;
-  margin: 0 auto;
-  max-width: 1000px;
-  width: 100%;
-  box-sizing: border-box;
-  text-align: center;
-  flex: 1; /* Adicionado para permitir que a caixa cresça e encolha conforme necessário */
-  overflow: auto; /* Adicionado para permitir rolagem se o conteúdo exceder a altura máxima */
+  background-color: #ffffff; /* Fundo branco para um visual limpo */
+  padding: 2rem; /* Espaçamento interno para respirabilidade */
+  border-radius: 15px; /* Bordas arredondadas para suavidade */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra sutil para profundidade */
+  max-width: 800px; /* Largura máxima para melhor leitura */
+  margin: 2rem auto; /* Margem automática para centralização vertical e horizontal */
+  text-align: center; /* Alinhamento do texto ao centro */
+  transition: all 0.3s ease-in-out; /* Transição suave para interações */
 }
+
+.content-container:hover {
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Sombra mais intensa ao passar o mouse */
+  transform: translateY(-5px); /* Leve elevação ao passar o mouse */
+}
+
 
 .content-title{
   font-size: 1.75em;

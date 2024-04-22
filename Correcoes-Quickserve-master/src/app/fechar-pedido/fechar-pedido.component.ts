@@ -11,7 +11,7 @@ import { FormularioPedidoComponent } from './formulario-pedido/formulario-pedido
   styleUrls: ['./fechar-pedido.component.scss']
 })
 export class FecharPedidoComponent implements OnInit, AfterViewInit {
-  opcoesPagamento = ['Cartão', 'Dinheiro'];
+  opcoesPagamento = ['Cartão', 'Dinheiro', 'PIX'];
   pagamentoSelecionado = this.opcoesPagamento[0];
   temItensNoCarrinho$: Observable<boolean>;
   @ViewChild(FormularioPedidoComponent) formularioPedidoComponent: FormularioPedidoComponent | undefined;
@@ -26,7 +26,6 @@ export class FecharPedidoComponent implements OnInit, AfterViewInit {
   }
 
   ngAfterViewInit() {
-    // Agora você pode acessar seguro o `formularioPedidoComponent`
     console.log(this.formularioPedidoComponent);
   }
 
@@ -59,16 +58,27 @@ export class FecharPedidoComponent implements OnInit, AfterViewInit {
   }
 
   finalizarPedido() {
-    if (this.formularioPedidoComponent && this.formularioPedidoComponent.formularioPedido.valid) {
+    const btnConcluir = document.querySelector('.btn-success');
+    if (this.formularioPedidoComponent && this.formularioPedidoComponent.formularioPedido.valid && this.pagamentoSelecionado) {
       this.temItensNoCarrinho$.subscribe((temItens: boolean) => {
         if (temItens) {
-          alert('Pedido concluído com sucesso!');
+          if (btnConcluir) {
+            btnConcluir.classList.remove('disabled');
+            btnConcluir.classList.add('enabled');
+          }
+          setTimeout(() => {
+            alert('Pedido concluído com sucesso!');
+          }, 300);
         } else {
           alert('Por favor, adicione itens ao carrinho.');
         }
       });
     } else {
-      alert('Por favor, preencha o formulário de endereço corretamente.');
+      if (btnConcluir) {
+        btnConcluir.classList.remove('enabled');
+        btnConcluir.classList.add('disabled');
+      }
+      alert('Por favor, preencha o formulário de endereço corretamente e escolha uma forma de pagamento.');
     }
-  }
+  }  
 }

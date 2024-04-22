@@ -1,22 +1,140 @@
 .container {
-  margin-left: 20px; /* Afastamento da margem esquerda */
-  margin-right: 20px; /* Afastamento da margem direita */
+  margin: 20px;
+  display: flex;
+  justify-content: center;
 }
 
-.item-box {
-  border: 1px solid #ccc; /* Adicionando uma borda para separar os itens */
-  padding: 10px; /* Espaçamento interno */
-  margin-bottom: 10px; /* Espaço entre os itens */
+.box {
+  border-radius: 5px;
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.1);
+  margin: 20px 10px 30px 20px;
+  width: 96%; 
+  max-height: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  overflow: hidden; 
 }
 
-.item-box p {
-  margin: 0; /* Removendo a margem padrão dos parágrafos */
+.box-header {
+  padding: 15px;
+  border-bottom: 1px solid #b08bc9;
+  width: 100%;
+  text-align: center;
 }
 
-.item-box button {
-  margin-right: 5px; /* Espaçamento entre os botões */
+.box-body {
+  padding: 15px;
+  width: 100%;
+  display: flex; /* Added to center the content */
+  flex-direction: column; /* Added to center the content */
+  align-items: center; /* Added to center the content */
+  justify-content: center; /* Added to center the content vertically */
 }
 
-.item-description {
-  margin-top: 10px; /* Espaçamento superior para a descrição */
+.table {
+  margin-bottom: 0;
+  width: 100%;
+  text-align: center; /* Added to center the text in the table */
+}
+
+.header-cell {
+  border-bottom: 2px solid #b08bc9;
+}
+
+/* Estilo dos Botões com Cor Roxo Vibrante */
+.btn {
+  margin: 0 10px;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 25px;
+  font-size: 1rem;
+  line-height: 1.5;
+  transition: background-color 0.3s, transform 0.3s, box-shadow 0.3s;
+  cursor: pointer;
+  color: #fff;
+  background-color: #8A2BE2; /* Roxo vibrante */
+  box-shadow: 0 2px 4px rgba(139, 0, 139, 0.4); /* Sombra suave */
+}
+
+/* Efeito de hover nos botões */
+.btn:hover {
+  background-color: #9B30FF; /* Roxo um pouco mais claro */
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(139, 0, 139, 0.6);
+}
+
+/* Efeito de foco nos botões */
+.btn:focus {
+  outline: none;
+  box-shadow: 0 0 0 0.2rem rgba(138, 43, 226, 0.5);
+}
+
+/* Animação ao clicar nos botões */
+.btn:active {
+  transform: scale(0.98);
+  background-color: #7A1F99; /* Roxo mais escuro */
+}
+
+/* Estilo para os botões de adicionar e remover no carrinho */
+.btn-primary, .btn-secondary {
+  padding: 5px 8px; /* Diminui o preenchimento */
+  font-size: 0.75rem; /* Diminui o tamanho da fonte */
+  border-radius: 15px; /* Bordas arredondadas */
+}
+
+/* Estilo para o botão 'Remover Tudo' */
+.btn-danger {
+  padding: 7px 15px; /* Diminui o preenchimento */
+  font-size: 0.90rem; /* Diminui o tamanho da fonte */
+  border-radius: 15px; /* Bordas arredondadas */
+}
+
+.text-danger {
+  color: #dc3545;
+}
+
+/* Estilo do container principal para alinhar o container 'Concluir Pedido' */
+.main-container {
+  display: flex;
+  justify-content: flex-end; /* Alinha o container à direita */
+  padding-right: 20px; /* Afastamento de 20px da margem direita */
+}
+
+/* Estilo do container 'Concluir Pedido' */
+.Container-concluir {
+  width: 40%; /* Largura do container ajustada para 40% */
+  max-width: 300px; /* Largura máxima para evitar que fique muito grande */
+  margin-top: 10px; /* Espaçamento de 10px do container acima */
+  padding: 15px;
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  text-align: left; /* Alinhamento do texto à esquerda dentro do container */
+}
+
+/* Estilo do botão 'Concluir Pedido' */
+.Container-concluir .btn-success {
+  display: block; /* O botão ocupa toda a largura do container */
+  margin: 10px auto; /* Centraliza o botão horizontalmente */
+  padding: 10px 25px;
+  font-size: 1rem;
+  border-radius: 20px;
+  color: white;
+  background-color: #4c2a85; /* Cor de fundo roxa */
+  border: none;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: background-color 0.3s, opacity 0.3s; /* Transição suave para cor e opacidade */
+}
+
+/* Estilo do botão quando está desabilitado */
+.Container-concluir .btn-success.disabled {
+  pointer-events: none; /* Bloqueia cliques no botão */
+  opacity: 0.5; /* Torna o botão mais opaco */
+}
+
+/* Estilo do botão quando está habilitado */
+.Container-concluir .btn-success.enabled {
+  pointer-events: auto; /* Permite cliques no botão */
+  opacity: 1; /* Restaura a opacidade do botão */
 }

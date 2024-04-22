@@ -13,9 +13,11 @@
       </div>
       <div class="box-body">
         <p>{{menuItem.price | currency: 'BRL': true}}</p>
-        <a class="botao-adicionar">
-          <a (click)="adicionarItem(menuItem)" class=""><i class="fa fa-plus-circle"></i> Adicionar</a>
-        </a>
+        <!-- ... outros elementos do item ... -->
+        <div [class.clicado]="itemAdicionadoId === menuItem.id" class="botao-adicionar" (click)="adicionarItem(menuItem)">
+          <i class="fa fa-plus-circle"></i> Adicionar
+          <i class="fa fa-check icone-verificacao" *ngIf="itemAdicionadoId === menuItem.id"></i>
+        </div>
       </div>
     </div>
   </div>

@@ -1,5 +1,14 @@
-<!-- total-gastos.component.html -->
-<p class="lead">Frete e Total:</p>
-<p>Frete: {{ entrega | currency: 'BRL': true }}</p>
-<p>Total: {{ total() | currency: 'BRL': true }}</p>
+<!-- Outros containers acima -->
+<div class="item-container">
+  <!-- Conteúdo do container de itens aqui -->
+</div>
 
+<div class="cost-container">
+  <div class="cost-container-header">
+    <p class="lead">Frete e Total:</p>
+  </div>
+  <div class="cost-container-body">
+    <p>Frete: {{ entrega | currency: 'BRL': true }}</p>
+    <p>Total: {{ total() | currency: 'BRL': true }}</p>
+  </div>
+</div>

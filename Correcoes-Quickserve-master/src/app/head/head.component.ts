@@ -5,7 +5,7 @@ import { Component, OnInit } from '@angular/core';
   templateUrl: './head.component.html',
   styleUrl: './head.component.scss'
 })
-export class HeadComponent {
+export class HeadComponent implements OnInit {
 
   activeLink: string = ''; // Propriedade para rastrear o link ativo
   // Método para definir o link ativo

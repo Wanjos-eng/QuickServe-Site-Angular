@@ -1,58 +1,72 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
 .form-container {
   display: flex;
   flex-wrap: wrap;
+  gap: 30px; /* Aumentando o espaçamento entre os elementos do formulário */
   padding: 20px;
-  align-content: center;
+  background-color: #fff;
+  border-radius: 8px;
+  max-width: 800px;
+  margin: auto; /* Centraliza o formulário */
 }
 
 .form-group {
-  flex: 1 1 auto;
-  margin-bottom: 20px; /* Espaçamento entre os grupos */
-  position: relative; /* Adicionado para posicionamento relativo */
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 20px;
 }
 
 .form-group label {
   font-size: 1rem;
-  color: rgb(46, 17, 85);
+  color: #333;
   margin-bottom: 0.5rem;
-  display: block;
 }
 
 .form-group input {
-  width: 80%; /* Largura padrão - 100% da largura do seu container */
-  padding: 0.5rem;
+  padding: 0.75rem;
   font-size: 1rem;
-  color: #333;
-  border: 1px solid #b08bc9;
-  border-radius: 4px;
-  background-color: #f0f0f0;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  border: 1px solid #ced4da;
+  border-radius: 0.25rem;
+  transition: border-color 0.15s ease-in-out;
 }
 
-.small-input {
-  width: 30%; /* Largura do campo de número - 30% da largura do seu container */
+.form-group input:focus {
+  border-color: #80bdff;
+  outline: 0;
 }
 
-.address-input {
-  width: calc(70% - 10px); /* Largura do campo de endereço - 70% da largura do seu container, ajustada para levar em conta a margem */
+.form-group input.input-valid {
+  border-color: #28a745;
 }
 
 .invalid-feedback {
-  color: red;
-  font-size: 0.8rem;
-  margin-top: 0.2rem; /* Espaçamento para cima */
-  position: absolute; /* Posicionamento absoluto */
-  bottom: -20px; /* Posição em relação ao grupo de formulário */
-  left: 0; /* Alinhamento à esquerda */
+  display: block;
+  color: #dc3545;
+  font-size: 0.875rem;
+  margin-top: 0.25rem;
 }
 
+/* Ajuste para o campo de número */
 .number-group {
-  margin-right: 10px; /* Espaçamento entre o grupo de número e o próximo grupo */
+  flex: 0 0 auto;
+  width: 100px; /* Tamanho fixo para o campo de número */
+}
+
+/* Ajuste para o campo de endereço */
+.address-group {
+  flex: 1 1 auto;
+  margin-right: 10px; /* Espaçamento entre o campo de endereço e o de número */
+}
+
+/* Ajuste para o campo de complemento */
+.complement-group {
+  flex: 2 1 auto;
 }
 
 /* Ajuste para telas menores */
 @media (max-width: 767px) {
   .form-group {
-    flex: 1 1 100%; /* Alterado para ocupar toda a largura em telas menores */
+    width: 100%; /* Alterado para ocupar toda a largura em telas menores */
   }
 }

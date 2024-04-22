@@ -1,37 +1,35 @@
-/* Estilo do Carrinho */
+/* Estilo do Carrinho Modernizado */
 .box {
-  border-radius: 5px;
-  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.1);
-  margin: 20px 10px 30px 20px;
-  max-height: 50vh;
+  border-radius: 10px; /* Bordas mais arredondadas */
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2); /* Sombra mais suave e espalhada */
+  margin: 20px;
+  max-height: 60vh; /* Ajuste na altura máxima para melhor visualização */
   display: flex;
   flex-direction: column;
-  flex: 1; /* Adicionado para permitir que a caixa cresça e encolha conforme necessário */
-  overflow: auto; /* Adicionado para permitir rolagem se o conteúdo exceder a altura máxima */
+  overflow: hidden; /* Esconde a barra de rolagem */
 }
 
 .box-header {
-  padding: 15px;
-  border-bottom: 1px solid #b08bc9;
+  padding: 20px;
+  background-color: #8A2BE2; /* Cor de fundo para o cabeçalho */
+  color: white; /* Texto branco para contraste */
   display: flex;
   align-items: center;
   justify-content: space-between;
 }
 
 .box-body {
-  padding: 15px;
-  flex: 1; /* Adicionado para permitir que a caixa cresça e encolha conforme necessário */
-  overflow: auto; /* Adicionado para permitir rolagem se o conteúdo exceder a altura máxima */
+  padding: 20px;
+  background: #f9f9f9; /* Cor de fundo mais clara para o corpo */
+  overflow-y: auto; /* Barra de rolagem apenas vertical */
 }
 
 .table-responsive {
-  overflow-x: auto;
   min-height: .01%;
 }
 
 .table {
   width: 100%;
-  max-width: 100%;
   margin-bottom: 1rem;
   background-color: transparent;
 }
@@ -40,43 +38,48 @@
 .table td {
   padding: 0.75rem;
   vertical-align: top;
-  border-top: 1px solid #eceeef;
+  border-bottom: 1px solid #eceeef; /* Linhas horizontais em vez de verticais */
 }
 
 .text-right {
-  text-align: right !important;
+  text-align: right;
 }
 
+/* Estilo dos Botões com Novas Cores */
 .btn {
-  display: inline-block;
-  font-weight: 400;
-  text-align: center;
-  white-space: nowrap;
-  vertical-align: middle;
-  user-select: none;
-  border: 1px solid transparent;
-  padding: .375rem .75rem;
-  font-size: 1rem;
+  font-weight: 400; /* Texto com peso normal */
+  padding: 10px 15px; /* Preenchimento uniforme para todos os botões */
+  font-size: 16px; /* Tamanho de fonte padrão */
   line-height: 1.5;
-  border-radius: .25rem;
-  transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;
-}
-.simbol-remove{
-  cursor: pointer;
-}
-
-.btn-danger {
-  color: #fff;
-  background-color: #8335dc;
-  border-color: #8335dc;
-  cursor: pointer;
-  margin-right: 5px;
+  border-radius: 5px; /* Bordas suavemente arredondadas */
+  transition: background-color .15s ease-in-out, border-color .15s ease-in-out; /* Transição suave para cor de fundo e borda */
+  text-decoration: none; /* Removendo sublinhado de todos os botões */
+  display: inline-flex; /* Alinhamento flexível */
+  align-items: center; /* Alinhamento vertical dos ícones e texto */
+  justify-content: center; /* Alinhamento horizontal dos ícones e texto */
 }
 
+/* Estilo específico para o botão 'Fechar Pedido' com um tom de roxo vibrante */
 .btn-success {
-  color: #fff;
-  background-color: rgb(46, 17, 85);
-  border-color: rgb(46, 17, 85);
-  text-decoration: none;
+  background-color: #8A2BE2; /* Tom de roxo vibrante */
+  border-color: #8A2BE2; /* Cor da borda correspondente */
+  color: white; /* Texto branco para contraste */
 }
 
+/* Estilo específico para o botão 'Limpar' seguindo o padrão de combinação de cores */
+.btn-danger {
+  background-color: #DC3545; /* Cor de fundo vermelha */
+  border-color: #DC3545; /* Cor da borda correspondente */
+  color: white; /* Texto branco para contraste */
+}
+
+/* Ajustando o tamanho dos ícones para corresponder ao do texto */
+.fa {
+  font-size: 16px; /* Tamanho de fonte dos ícones */
+  margin-right: 5px; /* Espaçamento entre ícone e texto */
+}
+
+/* Adicionando um efeito de hover sutil para os botões */
+.btn:hover {
+  filter: brightness(90%); /* Escurece o botão ao passar o mouse */
+}

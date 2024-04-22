@@ -1,16 +1,16 @@
 <form *ngIf="formularioPedido" [formGroup]="formularioPedido" (ngSubmit)="enviar()" class="form-container">
   <div class="form-group address-group">
     <label>Endereço</label>
-    <input type="text" formControlName="endereco" class="form-control address-input" placeholder="Insira seu endereço">
+    <input type="text" formControlName="endereco" [ngClass]="{'input-valid': formularioPedido.get('endereco')?.valid}" class="form-control address-input" placeholder="Insira seu endereço">
     <div *ngIf="formularioPedido.get('endereco')?.invalid && (formularioPedido.get('endereco')?.dirty || formularioPedido.get('endereco')?.touched)" class="invalid-feedback">Insira um endereço válido</div>
   </div>
   <div class="form-group number-group">
     <label>Número</label>
-    <input type="text" formControlName="numero" class="form-control small-input" placeholder="Nº">
+    <input type="text" formControlName="numero" [ngClass]="{'input-valid': formularioPedido.get('numero')?.valid}" class="form-control small-input" placeholder="Nº">
     <div *ngIf="formularioPedido.get('numero')?.invalid && (formularioPedido.get('numero')?.dirty || formularioPedido.get('numero')?.touched)" class="invalid-feedback">Insira um número válido</div>
   </div>
   <div class="form-group complement-group">
     <label>Complemento</label>
-    <input type="text" formControlName="complemento" class="form-control" placeholder="Insira um complemento">
+    <input type="text" formControlName="complemento" placeholder="Insira um complemento">
   </div>
 </form>
