@@ -47,6 +47,19 @@
   margin-top: 0.25rem;
 }
 
+.nome-group{
+  flex: 0 0 auto;
+  width: 150px;
+}
+
+.email-group{
+  flex: 2 1 auto;
+}
+
+.telefone-group{
+  flex: 1 1 auto;
+}
+
 /* Ajuste para o campo de número */
 .number-group {
   flex: 0 0 auto;

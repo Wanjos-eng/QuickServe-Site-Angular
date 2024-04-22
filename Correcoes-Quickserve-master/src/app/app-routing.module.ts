@@ -9,6 +9,7 @@ import { ReviewsComponent } from './restaurante-detals/reviews/reviews.component
 import { MenuComponent } from './restaurante-detals/menu/menu.component';
 import { FecharPedidoComponent } from './fechar-pedido/fechar-pedido.component';
 import { FormularioPedidoComponent } from './fechar-pedido/formulario-pedido/formulario-pedido.component';
+import { PedidoConcluidoComponent } from './pedido-concluido/pedido-concluido.component';
 
 const routes: Routes = [
   { path: 'head', component: HeadComponent },
@@ -24,8 +25,8 @@ const routes: Routes = [
   { path: 'fechar-pedido', component: FecharPedidoComponent,
   children: [
     {path: 'formulario', component: FormularioPedidoComponent}
-
-  ]}
+  ]},
+  {path: 'pedido-concluido', component: PedidoConcluidoComponent}
 ];
 
 @NgModule({

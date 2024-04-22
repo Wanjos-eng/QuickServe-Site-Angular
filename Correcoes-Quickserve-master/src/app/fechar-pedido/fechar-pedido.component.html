@@ -33,19 +33,17 @@
 </div>
 <div class="main-container">
   <div class="Container-concluir">
-    <app-custos [entrega]="100" [totalCarrinho]="totalCarrinho()"></app-custos>
+    <app-custos [entrega]="20" [totalCarrinho]="totalCarrinho()"></app-custos>
     <div class="form-group">
       <label for="pagamento">Forma de pagamento:</label>
-    <select class="form-control" id="pagamento" formControlName="pagamentoSelecionado">
-      <option *ngFor="let opcao of opcoesPagamento" [value]="opcao">{{opcao}}</option>
-    </select>
-    <div *ngIf="formularioPedidoComponent?.formularioPedido?.get('pagamentoSelecionado')?.invalid && (formularioPedidoComponent?.formularioPedido?.get('pagamentoSelecionado')?.dirty || formularioPedidoComponent?.formularioPedido?.get('pagamentoSelecionado')?.touched)">
-      <small class="text-danger">Selecione uma forma de pagamento.</small>
-    </div>
+      <select formControlName="pagamentoSelecionado">
+        <option *ngFor="let opcao of opcoesPagamento" [value]="opcao" [selected]="opcao === pagamentoSelecionado">{{ opcao }}</option>
+      </select>
   </div>
-    <button class="btn btn-success" (click)="finalizarPedido()" [disabled]="!formularioPedidoComponent?.formularioPedido?.valid && !(temItensNoCarrinho$ | async) && !pagamentoSelecionado">
-      <i class="lock-icon fas fa-lock" *ngIf="!formularioPedidoComponent?.formularioPedido?.valid"></i>
-      Concluir Pedido
-    </button>
+  <button class="btn btn-success" (click)="finalizarPedido()" [disabled]="!formularioPedidoComponent?.formularioPedido?.valid && !(temItensNoCarrinho$ | async) && !pagamentoSelecionado">
+    <i class="lock-icon fas fa-lock" *ngIf="!formularioPedidoComponent?.formularioPedido?.valid"></i>
+    <span>Concluir Pedido</span>
+    <a *ngIf="formularioPedidoComponent?.formularioPedido?.valid" routerLink="/pedido-concluido"></a>
+  </button>
   </div>
 </div>

@@ -14,11 +14,13 @@ export class FormularioPedidoComponent implements OnInit {
 
   ngOnInit() {
     this.formularioPedido = this.construtorFormulario.group({
-      endereco: ['', { validators: [Validators.required, Validators.minLength(5)], updateOn: 'change' }],
-      numero: ['', { validators: [Validators.required, Validators.pattern('^[0-9]*$')], updateOn: 'change' }],
-      complemento: ['']
+      endereco: ['', [Validators.required, Validators.minLength(5)]],
+      numero: ['', [Validators.required, Validators.pattern('^[0-9]*$')]],
+      complemento: [''],
+      nome: ['', Validators.required],
+      email: ['', [Validators.required, Validators.email]],
+      telefone: ['', [Validators.required, Validators.pattern('^[0-9]*$')]]
     });
-
     this.formularioPedido.statusChanges.subscribe(status => {
       this.formValidityChanged.emit(status === 'VALID');
     });

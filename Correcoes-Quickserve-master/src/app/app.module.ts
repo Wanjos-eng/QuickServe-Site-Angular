@@ -19,6 +19,7 @@ import { CardComprarComponent } from './restaurante-detals/card-comprar/card-com
 import { FecharPedidoComponent } from './fechar-pedido/fechar-pedido.component';
 import { CustosComponent } from './fechar-pedido/custos/custos.component';
 import { FormularioPedidoComponent } from './fechar-pedido/formulario-pedido/formulario-pedido.component';
+import { PedidoConcluidoComponent } from './pedido-concluido/pedido-concluido.component';
 
 @NgModule({
     declarations: [
@@ -35,6 +36,7 @@ import { FormularioPedidoComponent } from './fechar-pedido/formulario-pedido/for
         FecharPedidoComponent,
         CustosComponent,
         FormularioPedidoComponent,
+        PedidoConcluidoComponent,
     ],
     providers: [{provide: LocationStrategy, useClass: HashLocationStrategy}],
     bootstrap: [AppComponent],

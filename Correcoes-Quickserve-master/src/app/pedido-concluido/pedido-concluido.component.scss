@@ -1,0 +1,108 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+.main-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 85vh;
+  width: 100%;
+  flex: 1; /* Adicionado para permitir que a caixa cresça e encolha conforme necessário */
+  overflow: auto; /* Adicionado para permitir rolagem se o conteúdo exceder a altura máxima */
+}
+
+.content-container {
+  background-color: #ffffff; /* Fundo branco para um visual limpo */
+  padding: 2rem; /* Espaçamento interno para respirabilidade */
+  border-radius: 15px; /* Bordas arredondadas para suavidade */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra sutil para profundidade */
+  max-width: 800px; /* Largura máxima para melhor leitura */
+  margin: 2rem auto; /* Margem automática para centralização vertical e horizontal */
+  text-align: center; /* Alinhamento do texto ao centro */
+  transition: all 0.4s ease-in-out; /* Transição suave para interações */
+  font-family: roboto;
+}
+
+.content-container:hover {
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Sombra mais intensa ao passar o mouse */
+  transform: translateY(-5px); /* Leve elevação ao passar o mouse */
+}
+
+
+.content-title{
+  font-size: 2.10em;
+  color: #000000;
+}
+
+.content-avalie{
+  padding-top: 20px;
+}
+
+.container {
+  padding-top: 20px;
+  margin: 0 auto;
+  width: 100%;
+  text-align: center;
+}
+
+h1 {
+  text-transform: uppercase;
+  font-size: .8rem;
+  margin-bottom: 2rem;
+  color: #777;
+}
+
+span {
+  display: block;
+  margin-top: 2rem;
+}
+
+.rate {
+  display: inline-block;
+  height: 46px;
+  padding: 0 10px;
+}
+
+.rate:not(:checked) > input {
+  position: absolute;
+  top: -9999px;
+}
+
+.rate:not(:checked) > label {
+  float: right;
+  width: 1em;
+  overflow: hidden;
+  white-space: nowrap;
+  cursor: pointer;
+  font-size: 30px;
+  color: #ccc;
+}
+
+.rate:not(:checked) > label:before {
+  content: '★ ';
+}
+
+.rate > input:checked ~ label {
+  color: #ffc700; /* Cor dourada para estrelas selecionadas */
+}
+
+.rate:not(:checked) > label:hover,
+.rate:not(:checked) > label:hover ~ label {
+  color: #deb217; /* Cor ao passar o mouse */
+}
+
+.rate > input:checked ~ label,
+.rate > input:checked ~ label:hover,
+.rate > input:checked ~ label:hover ~ label,
+.rate > label:hover ~ input:checked ~ label {
+  color: #c59b08; /* Cor ao passar o mouse sobre estrelas selecionadas */
+}
+
+/* Inverte a ordem das estrelas para que o preenchimento seja da esquerda para a direita */
+.rate > label {
+  float: none;
+  direction: rtl;
+}
+
+.rate > label:hover ~ label {
+  color: #ffc700; /* Cor dourada ao passar o mouse */
+}

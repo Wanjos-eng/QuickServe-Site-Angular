@@ -4,6 +4,9 @@ import { FormBuilder } from '@angular/forms';
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
 import { FormularioPedidoComponent } from './formulario-pedido/formulario-pedido.component';
+import { take } from 'rxjs/operators';
+import { Router } from '@angular/router';
+
 
 @Component({
   selector: 'app-fechar-pedido',
@@ -12,17 +15,18 @@ import { FormularioPedidoComponent } from './formulario-pedido/formulario-pedido
 })
 export class FecharPedidoComponent implements OnInit, AfterViewInit {
   opcoesPagamento = ['Cartão', 'Dinheiro', 'PIX'];
-  pagamentoSelecionado = this.opcoesPagamento[0];
+  pagamentoSelecionado = 'Dinheiro';
   temItensNoCarrinho$: Observable<boolean>;
   @ViewChild(FormularioPedidoComponent) formularioPedidoComponent: FormularioPedidoComponent | undefined;
 
-  constructor(private servicoCarrinho: ServicoCarrinhoCompras, private construtorFormulario: FormBuilder) {
+  constructor(private servicoCarrinho: ServicoCarrinhoCompras, private construtorFormulario: FormBuilder, private router: Router) {
     this.temItensNoCarrinho$ = this.servicoCarrinho.itens$.pipe(
       map((itens: any[]) => itens.length > 0)
     );
   }
 
   ngOnInit() {
+    this.formularioPedidoComponent?.formularioPedido?.get('pagamentoSelecionado')?.setValue(this.pagamentoSelecionado);
   }
 
   ngAfterViewInit() {
@@ -58,27 +62,24 @@ export class FecharPedidoComponent implements OnInit, AfterViewInit {
   }
 
   finalizarPedido() {
-    const btnConcluir = document.querySelector('.btn-success');
-    if (this.formularioPedidoComponent && this.formularioPedidoComponent.formularioPedido.valid && this.pagamentoSelecionado) {
-      this.temItensNoCarrinho$.subscribe((temItens: boolean) => {
-        if (temItens) {
-          if (btnConcluir) {
-            btnConcluir.classList.remove('disabled');
-            btnConcluir.classList.add('enabled');
-          }
-          setTimeout(() => {
-            alert('Pedido concluído com sucesso!');
-          }, 300);
-        } else {
+    this.temItensNoCarrinho$.pipe(
+      take(1) // Isso garante que a subscrição será descartada após o primeiro valor emitido
+    ).subscribe((temItens: boolean) => {
+      if (this.formularioPedidoComponent && this.formularioPedidoComponent.formularioPedido.valid && this.pagamentoSelecionado && temItens) {
+        // Processar o pedido
+        this.limparCarrinho();
+        // Redirecionar para "/pedido-concluido"
+        this.router.navigate(['/pedido-concluido']);
+        alert('Pedido concluído com sucesso!');
+        // Aqui você pode adicionar a lógica para processar o pedido
+        this.limparCarrinho(); // Limpa o carrinho após a conclusão do pedido
+      } else {
+        if (!temItens) {
           alert('Por favor, adicione itens ao carrinho.');
+        } else {
+          alert('Por favor, preencha o formulário de endereço corretamente e escolha uma forma de pagamento.');
         }
-      });
-    } else {
-      if (btnConcluir) {
-        btnConcluir.classList.remove('enabled');
-        btnConcluir.classList.add('disabled');
       }
-      alert('Por favor, preencha o formulário de endereço corretamente e escolha uma forma de pagamento.');
-    }
-  }  
+    });
+  }
 }
