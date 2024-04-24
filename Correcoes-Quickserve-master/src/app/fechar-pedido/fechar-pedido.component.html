@@ -10,7 +10,9 @@
             <th class="header-cell">Quantidade</th>
             <th class="header-cell">Itens</th>
             <th class="header-cell">Descrição</th>
+            <th class="header-cell">Subtotal</th>
             <th class="header-cell">        </th>
+
           </tr>
         </thead>
         <tbody>
@@ -22,6 +24,7 @@
             </td>
             <td>{{item?.menuItem?.name}}</td>
             <td>{{item?.menuItem?.description}}</td>
+            <td class="text-right" *ngIf="item">{{item.valor() | currency: 'BRL': true}}</td>
             <td>
               <button class="btn btn-danger" (click)="removerItemCarrinho(item)">Remover Tudo</button>
             </td>

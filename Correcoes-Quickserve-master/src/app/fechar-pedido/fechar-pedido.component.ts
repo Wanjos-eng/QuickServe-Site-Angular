@@ -15,7 +15,7 @@ import { Router } from '@angular/router';
 })
 export class FecharPedidoComponent implements OnInit, AfterViewInit {
   opcoesPagamento = ['Cartão', 'Dinheiro', 'PIX'];
-  pagamentoSelecionado = 'Dinheiro';
+  pagamentoSelecionado = '';
   temItensNoCarrinho$: Observable<boolean>;
   @ViewChild(FormularioPedidoComponent) formularioPedidoComponent: FormularioPedidoComponent | undefined;
 
