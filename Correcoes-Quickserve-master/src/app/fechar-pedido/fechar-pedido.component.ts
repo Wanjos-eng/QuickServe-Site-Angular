@@ -66,8 +66,6 @@ export class FecharPedidoComponent implements OnInit, AfterViewInit {
       take(1) // Isso garante que a subscrição será descartada após o primeiro valor emitido
     ).subscribe((temItens: boolean) => {
       if (this.formularioPedidoComponent && this.formularioPedidoComponent.formularioPedido.valid && this.pagamentoSelecionado && temItens) {
-        // Processar o pedido
-        this.limparCarrinho();
         // Redirecionar para "/pedido-concluido"
         this.router.navigate(['/pedido-concluido']);
         alert('Pedido concluído com sucesso!');

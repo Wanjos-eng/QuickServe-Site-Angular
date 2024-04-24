@@ -39,8 +39,8 @@
     <app-custos [entrega]="20" [totalCarrinho]="totalCarrinho()"></app-custos>
     <div class="form-group">
       <label for="pagamento">Forma de pagamento:</label>
-      <select formControlName="pagamentoSelecionado">
-        <option *ngFor="let opcao of opcoesPagamento" [value]="opcao" [selected]="opcao === pagamentoSelecionado">{{ opcao }}</option>
+      <select [(ngModel)]="pagamentoSelecionado">
+        <option *ngFor="let opcao of opcoesPagamento" [value]="opcao">{{ opcao }}</option>
       </select>
   </div>
   <button class="btn btn-success" (click)="finalizarPedido()" [disabled]="!formularioPedidoComponent?.formularioPedido?.valid && !(temItensNoCarrinho$ | async) && !pagamentoSelecionado">
