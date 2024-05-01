@@ -29,4 +29,15 @@ Contribuições são bem-vindas! Se você deseja contribuir, por favor, entre em
 Este projeto está licenciado sob a Licença MIT - veja o arquivo `license.txt` para detalhes.
 
 ## Imagens da aplicação
+<img src="imagens/fig1.gif">
+<img src="imagens/fig2.gif">
+<img src="imagens/fig3.gif">
+<img src="imagens/fig4.gif">
+<img src="imagens/fig5.gif">
+<img src="imagens/fig6.gif">
+<img src="imagens/fig7.gif">
+<img src="imagens/fig8.gif">
+<img src="imagens/fig9.gif">
+<img src="imagens/fig10.gif">
+<img src="imagens/fig11.gif">
 <img src="imagens/Animação.gif">
