@@ -5,7 +5,7 @@ O **QuikServe** é uma aplicação de delivery que exemplifica o uso do Angular 
 
 ## Tecnologias Utilizadas
 - Angular CLI: 17.3.3
-- Node.js
+- Node.js: 10.2.4
 - JSON Server (para simulação de API REST)
 
 ## Como Executar
