@@ -27,3 +27,6 @@ Contribuições são bem-vindas! Se você deseja contribuir, por favor, entre em
 
 ## Licença
 Este projeto está licenciado sob a Licença MIT - veja o arquivo `license.txt` para detalhes.
+
+## Imagens da aplicação
+<img src="imagens/Animação.gif">
