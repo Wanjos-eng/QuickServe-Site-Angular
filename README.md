@@ -26,4 +26,4 @@ Para iniciar o servidor JSON, caso já tenha ele instalado no seu computador, us
 Contribuições são bem-vindas! Se você deseja contribuir, por favor, entre em contato comigo pelos meios que estão em meu perfil!!!
 
 ## Licença
-Este projeto está licenciado sob a Licença MIT - veja o arquivo `LICENSE.txt` para detalhes.
+Este projeto está licenciado sob a Licença MIT - veja o arquivo `license.txt` para detalhes.
