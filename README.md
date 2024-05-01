@@ -13,6 +13,7 @@ O **QuikServe** é uma aplicação de delivery que exemplifica o uso do Angular 
 2. Inicie o servidor de desenvolvimento: `npm start` ou `ng serve`
 3. Abra `http://localhost:4200/` no navegador.
 As alterações nos arquivos fonte serão refletidas automaticamente na aplicação.
+OBS: É importante startar o server json para o funcionamento ideal de todas as funcionalidades
 
 ## Estrutura do Código
 Para adicionar novos componentes ao projeto: `ng generate component nome-do-componente`
