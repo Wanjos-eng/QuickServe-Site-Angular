@@ -44,7 +44,7 @@
       </select>
   </div>
   <button class="btn btn-success" (click)="finalizarPedido()" [disabled]="!formularioPedidoComponent?.formularioPedido?.valid && !(temItensNoCarrinho$ | async) && !pagamentoSelecionado">
-    <i class="lock-icon fas fa-lock" *ngIf="!formularioPedidoComponent?.formularioPedido?.valid"></i>
+    <i class="lock-icon fas fa-lock" *ngIf="!formularioPedidoComponent?.formularioPedido?.valid || !pagamentoSelecionado"></i>
     <span>Concluir Pedido</span>
     <a *ngIf="formularioPedidoComponent?.formularioPedido?.valid" routerLink="/pedido-concluido"></a>
   </button>
